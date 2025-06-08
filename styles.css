@@ -15,52 +15,52 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    min-height: 100vh;
-    -webkit-overflow-scrolling: touch;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    background: var(--light-bg);
 }
 
 .container {
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 /* Header Styles */
 .main-header {
     position: sticky;
     top: 0;
-    left: 0;
     width: 100%;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 1000;
 }
 
 /* Header Top */
 .header-top {
-    background-color: var(--secondary-color);
-    color: var(--white);
+    background: var(--secondary-color);
     padding: 10px 0;
-}
-
-.header-top .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    color: var(--white);
 }
 
 .contact-info {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .info-item {
@@ -69,6 +69,7 @@ body {
     gap: 8px;
     color: var(--white);
     text-decoration: none;
+    font-size: 0.9rem;
 }
 
 .info-item:hover {
@@ -143,9 +144,10 @@ body {
 
 .nav-list {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-item {
@@ -158,9 +160,10 @@ body {
     gap: 8px;
     color: var(--secondary-color);
     text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    min-height: 44px;
 }
 
 .nav-link:hover {
@@ -196,11 +199,6 @@ body {
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
     display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--secondary-color);
-    cursor: pointer;
 }
 
 /* Responsive Design */
@@ -358,20 +356,16 @@ body {
 
 /* Hero Section */
 #hero {
-    height: auto;
     min-height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                 url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
     padding: 60px 0;
+    color: var(--white);
 }
 
 #hero::after {
@@ -386,10 +380,9 @@ body {
 
 .hero-content {
     text-align: center;
-    position: relative;
-    z-index: 2;
     max-width: 800px;
-    padding: 0 15px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .hero-content h2 {
@@ -421,9 +414,7 @@ body {
 
 /* Section Styles */
 .section {
-    padding: 40px 0;
-    position: relative;
-    overflow: hidden;
+    padding: 80px 0;
 }
 
 .section::before {
@@ -456,9 +447,7 @@ body {
 
 .about-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 0 15px;
+    gap: 30px;
 }
 
 .about-item {
@@ -487,9 +476,7 @@ body {
 
 .programs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 0 15px;
+    gap: 30px;
 }
 
 .program-card {
@@ -516,10 +503,7 @@ body {
 
 .faculty-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-    padding: 0 15px;
+    gap: 30px;
 }
 
 .faculty-card {
@@ -1563,9 +1547,7 @@ footer::before {
 
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
+    gap: 30px;
 }
 
 .instagram-post {
@@ -2093,9 +2075,7 @@ footer::before {
 
 .achievements-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
+    gap: 30px;
 }
 
 .achievement-card {
@@ -2237,9 +2217,7 @@ footer::before {
 
 .posts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    gap: 30px;
 }
 
 .instagram-style-post {
