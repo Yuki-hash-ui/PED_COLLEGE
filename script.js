@@ -1,155 +1,281 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Мобильді мәзірді басқару
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navList = document.querySelector('.nav-list');
-    
-    if (mobileMenuToggle && navList) {
-        mobileMenuToggle.addEventListener('click', function() {
-            navList.classList.toggle('active');
-            this.classList.toggle('active');
-        });
-    }
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!event.target.closest('.nav-list') && !event.target.closest('.mobile-menu-toggle')) {
-            if (navList.classList.contains('active')) {
-                navList.classList.remove('active');
-                mobileMenuToggle.classList.remove('active');
-            }
+    // Mobile menu toggle
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Navbar background on scroll
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
         }
     });
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+    // Smooth scrolling for navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                // Close mobile menu if open
-                if (navList.classList.contains('active')) {
-                    navList.classList.remove('active');
-                    mobileMenuToggle.classList.remove('active');
-                }
-                
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
                 });
             }
         });
     });
 
-    // Форманы өңдеу
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic form validation
-            const formData = new FormData(this);
-            let isValid = true;
-            let firstInvalidField = null;
+    // Animation on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-            this.querySelectorAll('input, select, textarea').forEach(field => {
-                if (field.required && !field.value.trim()) {
-                    isValid = false;
-                    field.classList.add('invalid');
-                    if (!firstInvalidField) firstInvalidField = field;
-                } else {
-                    field.classList.remove('invalid');
-                }
-            });
-
-            if (!isValid) {
-                firstInvalidField.focus();
-                return;
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
             }
-
-            // Show success message
-            alert('Хабарлама сәтті жіберілді!');
-            this.reset();
         });
+    }, observerOptions);
+
+    // Observe elements for animation
+    const animateElements = document.querySelectorAll('.value-card, .leader-card, .program-card, .post-card');
+    animateElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+
+    // Counter animation for stats
+    function animateCounter(element, target) {
+        let current = 0;
+        const increment = target / 100;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(current) + (target >= 1000 ? '+' : '');
+        }, 20);
     }
 
-    // Lazy loading for images
-    if ('loading' in HTMLImageElement.prototype) {
-        const images = document.querySelectorAll('img[loading="lazy"]');
-        images.forEach(img => {
-            img.src = img.dataset.src;
+    // Animate stats when in view
+    const statsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = entry.target.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    const text = stat.textContent;
+                    const number = parseInt(text.replace(/\D/g, ''));
+                    if (number) {
+                        stat.textContent = '0';
+                        animateCounter(stat, number);
+                    }
+                });
+                statsObserver.unobserve(entry.target);
+            }
         });
-    } else {
-        // Fallback for browsers that don't support lazy loading
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-        document.body.appendChild(script);
+    }, { threshold: 0.5 });
+
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) {
+        statsObserver.observe(heroStats);
     }
 
-    // Handle mobile device orientation changes
-    window.addEventListener('orientationchange', function() {
-        // Wait for orientation change to complete
-        setTimeout(function() {
-            // Adjust any necessary layouts
-            window.scrollTo(0, 0);
-        }, 200);
-    });
-
-    // Add touch feedback
-    document.querySelectorAll('button, .nav-link, .cta-button').forEach(element => {
-        element.addEventListener('touchstart', function() {
-            this.style.opacity = '0.7';
-        });
-        
-        element.addEventListener('touchend', function() {
-            this.style.opacity = '1';
-        });
-    });
-
-    // Optimize mobile performance
-    let resizeTimer;
-    window.addEventListener('resize', function() {
-        document.body.classList.add('resize-animation-stopper');
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            document.body.classList.remove('resize-animation-stopper');
-        }, 400);
-    });
-});
-
-// Add to homescreen prompt for PWA
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    // Show your custom "Add to Home Screen" button or banner
-});
-
-// Service Worker Registration for offline functionality
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js').then(function(registration) {
-            console.log('ServiceWorker registration successful');
-        }, function(err) {
-            console.log('ServiceWorker registration failed: ', err);
-        });
-    });
-}
-
-// Анимацияларды қосу
-const fadeElements = document.querySelectorAll('.section');
-const observerOptions = {
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
+    // Like button functionality for posts
+    const posts = document.querySelectorAll('.post-card');
+    posts.forEach(post => {
+        const likeButton = post.querySelector('.post-stats .stat:first-child');
+        if (likeButton) {
+            likeButton.style.cursor = 'pointer';
+            likeButton.addEventListener('click', function() {
+                const currentLikes = parseInt(this.textContent.split(' ')[1]);
+                const newLikes = currentLikes + 1;
+                this.innerHTML = `❤️ ${newLikes}`;
+                this.style.color = '#e74c3c';
+                
+                // Animate like
+                this.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
         }
     });
-}, observerOptions);
 
-fadeElements.forEach(element => {
-    observer.observe(element);
-}); 
+    // Application form modal (simple implementation)
+    const applyButtons = document.querySelectorAll('.btn-primary');
+    applyButtons.forEach(button => {
+        if (button.textContent.includes('Өтініш беру') || button.textContent.includes('өтініш')) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Өтініш беру формасы сайттың келесі нұсқасында қосылады. Телефон арқылы бізбен байланысыңыз: +7 (123) 456-78-90');
+            });
+        }
+    });
+
+    // Floating animation for hero image
+    const heroImage = document.querySelector('.hero-image');
+    if (heroImage) {
+        let isFloating = true;
+        
+        function floatAnimation() {
+            if (isFloating) {
+                heroImage.style.transform = 'translateY(-10px)';
+                setTimeout(() => {
+                    if (isFloating) heroImage.style.transform = 'translateY(0px)';
+                }, 1500);
+            }
+        }
+        
+        setInterval(floatAnimation, 3000);
+        
+        // Pause animation on hover
+        heroImage.addEventListener('mouseenter', () => {
+            isFloating = false;
+            heroImage.style.transform = 'translateY(0px)';
+        });
+        
+        heroImage.addEventListener('mouseleave', () => {
+            isFloating = true;
+        });
+    }
+
+    // Parallax effect for floating elements
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.floating-element');
+        
+        parallaxElements.forEach((element, index) => {
+            const speed = 0.5 + (index * 0.2);
+            const yPos = -(scrolled * speed);
+            element.style.transform = `translateY(${yPos}px)`;
+        });
+    });
+
+    // Add typing effect to hero title
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+        const originalText = heroTitle.innerHTML;
+        const words = originalText.split(' ');
+        let wordIndex = 0;
+        
+        function typeWords() {
+            if (wordIndex < words.length) {
+                const currentWords = words.slice(0, wordIndex + 1).join(' ');
+                heroTitle.innerHTML = currentWords;
+                wordIndex++;
+                setTimeout(typeWords, 200);
+            }
+        }
+        
+        // Start typing effect after page load
+        setTimeout(() => {
+            heroTitle.innerHTML = '';
+            typeWords();
+        }, 500);
+    }
+
+    // Add hover effects to cards
+    const cards = document.querySelectorAll('.value-card, .leader-card, .program-card, .post-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '';
+        });
+    });
+
+    // Group type hover effects
+    const groupTypes = document.querySelectorAll('.group-type');
+    groupTypes.forEach(group => {
+        group.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+        });
+        
+        group.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = 'none';
+        });
+    });
+
+    // Add loading animation
+    window.addEventListener('load', function() {
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.5s ease';
+        
+        setTimeout(() => {
+            document.body.style.opacity = '1';
+        }, 100);
+    });
+
+    console.log('Педагогикалық колледж - сайт сәтті жүктелді!');
+});
+
+// Utility functions
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Smooth scroll behavior for older browsers
+if (!('scrollBehavior' in document.documentElement.style)) {
+    const scrollToElement = (element, duration = 800) => {
+        const start = window.pageYOffset;
+        const target = element.offsetTop - 80;
+        const distance = target - start;
+        let startTime = null;
+
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, start, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
+    };
+}

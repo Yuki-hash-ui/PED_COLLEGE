@@ -2,1080 +2,897 @@
 <html lang="kk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Педагогикалық колледж - Сапалы білім - жарқын болашаққа жол">
-    <meta name="theme-color" content="#4A90E2">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="format-detection" content="telephone=no">
-    <title>Педагогикалық колледж</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Педагогикалық колледж - Болашақтың білімі</title>
+    <meta name="description" content="Заманауи педагогикалық колледж жоғары сапалы білім беру және инновациялық оқыту әдістерімен">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="header-top">
-            <div class="container">
-                <div class="contact-info">
-                    <a href="tel:+77771234567" class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+7 (777) 123-45-67</span>
-                    </a>
-                    <a href="mailto:info@college.kz" class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>info@college.kz</span>
-                    </a>
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <span>Дүйсенбі - Жұма: 9:00 - 18:00</span>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="https://instagram.com/pedagogical_college" target="_blank" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://t.me/pedagogical_college" target="_blank" class="social-link">
-                        <i class="fab fa-telegram"></i>
-                    </a>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">🎓</div>
+                <div class="logo-text">
+                    <h1>AGK</h1>
+                    <p>Болашақтың білімі</p>
                 </div>
             </div>
-        </div>
-        <div class="header-main">
-            <div class="container">
-                <div class="logo-container">
-                    <i class="fas fa-graduation-cap logo-icon"></i>
-                    <div class="logo-text">
-                        <h1>Педагогикалық колледж</h1>
-                        <span class="logo-subtitle">Сапалы білім - жарқын болашаққа жол</span>
-                    </div>
-                </div>
-                <nav class="main-nav">
-                    <ul class="nav-list">
-                        <li class="nav-item">
-                            <a href="#about" class="nav-link">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Колледж туралы</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#programs" class="nav-link">
-                                <i class="fas fa-book"></i>
-                                <span>Білім беру бағдарламалары</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#faculty" class="nav-link">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                                <span>Оқытушылар</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#admission" class="nav-link">
-                                <i class="fas fa-user-graduate"></i>
-                                <span>Қабылдау</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#news" class="nav-link">
-                                <i class="fas fa-newspaper"></i>
-                                <span>Жаңалықтар</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#contact" class="nav-link">
-                                <i class="fas fa-envelope"></i>
-                                <span>Байланыс</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <button class="mobile-menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Басты бет</a>
+                <a href="#about" class="nav-link">Колледж туралы</a>
+                <a href="#programs" class="nav-link">Мамандықтар</a>
+                <a href="#leadership" class="nav-link">Басшылық</a>
+                <a href="#student-life" class="nav-link">Студенттік өмір</a>
+                <a href="#contact" class="nav-link">Байланыс</a>
+                <button class="btn btn-primary">Өтініш беру</button>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </header>
-    <main>
-        <section id="hero">
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
             <div class="hero-content">
-                <h2>Болашақ педагогтарды даярлаудың көшбасшысы</h2>
-                <p>Сапалы білім - жарқын болашаққа жол</p>
-                <a href="#admission" class="cta-button">Оқуға түсу</a>
-            </div>
-        </section>
-
-        <section id="about" class="section">
-            <div class="container">
-                <h2>Колледж туралы</h2>
-                <div class="about-grid">
-                    <div class="about-item">
-                        <h3>Біздің миссиямыз</h3>
-                        <p>Заманауи білім беру әдістерін қолдана отырып, жоғары білікті педагогтарды даярлау</p>
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Сіздің болашағыңыз
+                        <span class="gradient-text">осы жерде басталады</span>
+                    </h1>
+                    <p class="hero-description">
+                        Инновациялық оқыту әдістері, жоғары білікті оқытушылар және дамудың ең жақсы жағдайлары бар заманауи педагогикалық колледж.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large">Қазір түсу</button>
+                        <button class="btn btn-secondary btn-large">Көбірек білу</button>
                     </div>
-                    <div class="about-item">
-                        <h3>Тәжірибе</h3>
-                        <p>30 жылдан астам педагогикалық білім беру саласындағы тәжірибе</p>
-                    </div>
-                    <div class="about-item">
-                        <h3>Жетістіктер</h3>
-                        <p>5000+ түлек, 100+ марапат, республикалық деңгейдегі жүлделі орындар</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="achievements" class="section">
-            <div class="container">
-                <h2 class="section-title">
-                    <span class="title-icon"><i class="fas fa-trophy"></i></span>
-                    Студенттер жетістіктері
-                    <div class="title-underline"></div>
-                </h2>
-                <div class="achievements-grid">
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-medal"></i>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-number">1200+</div>
+                            <div class="stat-label">Студенттер</div>
                         </div>
-                        <div class="achievement-content">
-                            <h3>Республикалық олимпиада</h3>
-                            <div class="achievement-details">
-                                <p class="achievement-year">2024</p>
-                                <p class="achievement-result">I орын - Математика</p>
-                                <p class="achievement-result">II орын - Қазақ тілі</p>
-                                <p class="student-name">Асқар Мұратұлы, Әсел Қайратқызы</p>
-                            </div>
+                        <div class="stat">
+                            <div class="stat-icon">📚</div>
+                            <div class="stat-number">8+</div>
+                            <div class="stat-label">Мамандықтар</div>
                         </div>
-                    </div>
-
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div class="achievement-content">
-                            <h3>Халықаралық конференция</h3>
-                            <div class="achievement-details">
-                                <p class="achievement-year">2024</p>
-                                <p class="achievement-result">Бас жүлде - Педагогикалық инновациялар</p>
-                                <p class="student-name">Айгүл Серікқызы</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="achievement-content">
-                            <h3>Спорттық жетістіктер</h3>
-                            <div class="achievement-details">
-                                <p class="achievement-year">2023-2024</p>
-                                <p class="achievement-result">Қалалық волейбол турнирі - I орын</p>
-                                <p class="achievement-result">Республикалық жеңіл атлетика - II орын</p>
-                                <p class="student-name">Колледж құрама командасы</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-music"></i>
-                        </div>
-                        <div class="achievement-content">
-                            <h3>Өнер байқауы</h3>
-                            <div class="achievement-details">
-                                <p class="achievement-year">2024</p>
-                                <p class="achievement-result">Республикалық "Жас талант" байқауы - Гран-при</p>
-                                <p class="student-name">Мақсат Ержанұлы</p>
-                            </div>
+                        <div class="stat">
+                            <div class="stat-icon">🏆</div>
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Жыл тәжірибе</div>
                         </div>
                     </div>
                 </div>
-
-                <div class="achievements-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">150+</div>
-                        <div class="stat-label">Медаль мен марапат</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">45+</div>
-                        <div class="stat-label">Республикалық жүлде</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">20+</div>
-                        <div class="stat-label">Халықаралық жеңіс</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">200+</div>
-                        <div class="stat-label">Мақтау қағазы</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="programs" class="section">
-            <div class="container">
-                <h2 class="section-title">
-                    <span class="title-icon"><i class="fas fa-graduation-cap"></i></span>
-                    Негізгі мамандықтар
-                    <div class="title-underline"></div>
-                </h2>
-                <div class="admission-card specialties">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3 class="card-title">НЕГІЗГІ МАМАНДЫҚТАР</h3>
-                        <div class="title-underline"></div>
-                    </div>
-                    <div class="specialty-list">
-                        <div class="specialty-item highlight-card">
-                            <div class="specialty-header">
-                                <div class="header-icon">
-                                    <i class="fas fa-language"></i>
-                                </div>
-                                <h4 class="specialty-title">ҚАЗАҚ ТІЛІ МЕН ӘДЕБИЕТІ МҰҒАЛІМІ</h4>
-                            </div>
-                            <div class="specialty-content">
-                                <div class="specialty-info">
-                                    <div class="info-row">
-                                        <i class="fas fa-clock"></i>
-                                        <span>ОҚУ МЕРЗІМІ: 3 ЖЫЛ</span>
-                                    </div>
-                                    <div class="info-row highlight">
-                                        <i class="fas fa-award"></i>
-                                        <span>ГРАНТ САНЫ: 50</span>
-                                    </div>
-                                    <div class="info-row">
-                                        <i class="fas fa-users"></i>
-                                        <span>ҚАЗАҚ ЖӘНЕ ОРЫС БӨЛІМДЕРІ</span>
-                                    </div>
-                                </div>
-                                <ul class="specialty-features">
-                                    <li><i class="fas fa-check-circle"></i> ПЕДАГОГИКАЛЫҚ ПРАКТИКА</li>
-                                    <li><i class="fas fa-check-circle"></i> ЗАМАНАУИ ӘДІСТЕМЕЛЕР</li>
-                                    <li><i class="fas fa-check-circle"></i> ТІЛДІК ДАЙЫНДЫҚ</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="specialty-item highlight-card">
-                            <div class="specialty-header">
-                                <div class="header-icon">
-                                    <i class="fas fa-running"></i>
-                                </div>
-                                <h4 class="specialty-title">ДЕНЕ ШЫНЫҚТЫРУ ЖӘНЕ СПОРТ</h4>
-                            </div>
-                            <div class="specialty-content">
-                                <div class="specialty-info">
-                                    <div class="info-row">
-                                        <i class="fas fa-clock"></i>
-                                        <span>ОҚУ МЕРЗІМІ: 3 ЖЫЛ</span>
-                                    </div>
-                                    <div class="info-row highlight">
-                                        <i class="fas fa-award"></i>
-                                        <span>ГРАНТ САНЫ: 45</span>
-                                    </div>
-                                    <div class="info-row">
-                                        <i class="fas fa-users"></i>
-                                        <span>ҚАЗАҚ ЖӘНЕ ОРЫС БӨЛІМДЕРІ</span>
-                                    </div>
-                                </div>
-                                <ul class="specialty-features">
-                                    <li><i class="fas fa-check-circle"></i> СПОРТТЫҚ ЖАТТЫҒУЛАР</li>
-                                    <li><i class="fas fa-check-circle"></i> АРНАЙЫ ДАЙЫНДЫҚ</li>
-                                    <li><i class="fas fa-check-circle"></i> ЖАРЫСТАРҒА ҚАТЫСУ</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="specialty-item highlight-card">
-                            <div class="specialty-header">
-                                <div class="header-icon">
-                                    <i class="fas fa-music"></i>
-                                </div>
-                                <h4 class="specialty-title">МУЗЫКАЛЫҚ БІЛІМ</h4>
-                            </div>
-                            <div class="specialty-content">
-                                <div class="specialty-info">
-                                    <div class="info-row">
-                                        <i class="fas fa-clock"></i>
-                                        <span>ОҚУ МЕРЗІМІ: 3 ЖЫЛ</span>
-                                    </div>
-                                    <div class="info-row highlight">
-                                        <i class="fas fa-award"></i>
-                                        <span>ГРАНТ САНЫ: 35</span>
-                                    </div>
-                                    <div class="info-row">
-                                        <i class="fas fa-users"></i>
-                                        <span>ҚАЗАҚ ЖӘНЕ ОРЫС БӨЛІМДЕРІ</span>
-                                    </div>
-                                </div>
-                                <ul class="specialty-features">
-                                    <li><i class="fas fa-check-circle"></i> МУЗЫКАЛЫҚ АСПАПТАР</li>
-                                    <li><i class="fas fa-check-circle"></i> ВОКАЛДЫҚ ДАЙЫНДЫҚ</li>
-                                    <li><i class="fas fa-check-circle"></i> ШЫҒАРМАШЫЛЫҚ ПРАКТИКА</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="specialty-item highlight-card">
-                            <div class="specialty-header">
-                                <div class="header-icon">
-                                    <i class="fas fa-child"></i>
-                                </div>
-                                <h4 class="specialty-title">МЕКТЕПКЕ ДЕЙІНГІ ТӘРБИЕ ЖӘНЕ ОҚЫТУ</h4>
-                            </div>
-                            <div class="specialty-content">
-                                <div class="specialty-info">
-                                    <div class="info-row">
-                                        <i class="fas fa-clock"></i>
-                                        <span>ОҚУ МЕРЗІМІ: 3 ЖЫЛ</span>
-                                    </div>
-                                    <div class="info-row highlight">
-                                        <i class="fas fa-award"></i>
-                                        <span>ГРАНТ САНЫ: 75</span>
-                                    </div>
-                                    <div class="info-row">
-                                        <i class="fas fa-users"></i>
-                                        <span>ҚАЗАҚ ЖӘНЕ ОРЫС БӨЛІМДЕРІ</span>
-                                    </div>
-                                </div>
-                                <ul class="specialty-features">
-                                    <li><i class="fas fa-check-circle"></i> БАЛАЛАРМЕН ЖҰМЫС</li>
-                                    <li><i class="fas fa-check-circle"></i> ПСИХОЛОГИЯ НЕГІЗДЕРІ</li>
-                                    <li><i class="fas fa-check-circle"></i> ПРАКТИКАЛЫҚ ДАҒДЫЛАР</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="specialty-item highlight-card">
-                            <div class="specialty-header">
-                                <div class="header-icon">
-                                    <i class="fas fa-book"></i>
-                                </div>
-                                <h4 class="specialty-title">БАСТАУЫШ БІЛІМ БЕРУ</h4>
-                            </div>
-                            <div class="specialty-content">
-                                <div class="specialty-info">
-                                    <div class="info-row">
-                                        <i class="fas fa-clock"></i>
-                                        <span>ОҚУ МЕРЗІМІ: 3 ЖЫЛ</span>
-                                    </div>
-                                    <div class="info-row highlight">
-                                        <i class="fas fa-award"></i>
-                                        <span>ГРАНТ САНЫ: 50</span>
-                                    </div>
-                                    <div class="info-row">
-                                        <i class="fas fa-users"></i>
-                                        <span>ҚАЗАҚ ЖӘНЕ ОРЫС БӨЛІМДЕРІ</span>
-                                    </div>
-                                </div>
-                                <ul class="specialty-features">
-                                    <li><i class="fas fa-check-circle"></i> ЗАМАНАУИ ӘДІСТЕМЕЛЕР</li>
-                                    <li><i class="fas fa-check-circle"></i> ИННОВАЦИЯЛЫҚ ТЕХНОЛОГИЯЛАР</li>
-                                    <li><i class="fas fa-check-circle"></i> ТӘЖІРИБЕЛІК САБАҚТАР</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="faculty" class="section">
-            <div class="container">
-                <h2>Колледж басшылығы</h2>
-                <div class="faculty-grid">
-                    <div class="faculty-card">
-                        <div class="faculty-info">
-                            <div class="position-header">
-                                <i class="fas fa-user-tie"></i>
-                                <h3>Колледж директоры</h3>
-                            </div>
-                            <div class="faculty-details">
-                                <p><i class="fas fa-graduation-cap"></i> Педагогика ғылымдарының докторы, профессор</p>
-                                <p><i class="fas fa-clock"></i> Қабылдау уақыты: Сейсенбі, Бейсенбі 15:00-17:00</p>
-                                <p><i class="fas fa-phone"></i> +7 (7XX) XXX-XX-01</p>
-                                <p><i class="fas fa-envelope"></i> director@college.kz</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faculty-card">
-                        <div class="faculty-info">
-                            <div class="position-header">
-                                <i class="fas fa-user-tie"></i>
-                                <h3>Оқу ісі жөніндегі орынбасар</h3>
-                            </div>
-                            <div class="faculty-details">
-                                <p><i class="fas fa-graduation-cap"></i> Педагогика ғылымдарының кандидаты</p>
-                                <p><i class="fas fa-clock"></i> Қабылдау уақыты: Дүйсенбі, Сәрсенбі 14:00-16:00</p>
-                                <p><i class="fas fa-phone"></i> +7 (7XX) XXX-XX-02</p>
-                                <p><i class="fas fa-envelope"></i> studies@college.kz</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faculty-card">
-                        <div class="faculty-info">
-                            <div class="position-header">
-                                <i class="fas fa-user-tie"></i>
-                                <h3>Тәрбие ісі жөніндегі орынбасар</h3>
-                            </div>
-                            <div class="faculty-details">
-                                <p><i class="fas fa-graduation-cap"></i> Педагогика магистрі</p>
-                                <p><i class="fas fa-clock"></i> Қабылдау уақыты: Сәрсенбі, Жұма 15:00-17:00</p>
-                                <p><i class="fas fa-phone"></i> +7 (7XX) XXX-XX-03</p>
-                                <p><i class="fas fa-envelope"></i> edu@college.kz</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faculty-card">
-                        <div class="faculty-info">
-                            <div class="position-header">
-                                <i class="fas fa-user-tie"></i>
-                                <h3>Оқу-өндірістік жұмыс жөніндегі орынбасар</h3>
-                            </div>
-                            <div class="faculty-details">
-                                <p><i class="fas fa-graduation-cap"></i> Білім беру менеджменті магистрі</p>
-                                <p><i class="fas fa-clock"></i> Қабылдау уақыты: Дүйсенбі, Бейсенбі 14:00-16:00</p>
-                                <p><i class="fas fa-phone"></i> +7 (7XX) XXX-XX-04</p>
-                                <p><i class="fas fa-envelope"></i> practice@college.kz</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="admission" class="section admission-section">
-            <div class="container">
-                <div class="admission-header">
-                    <h2 class="main-title">ҚАБЫЛДАУ 2025</h2>
-                    <div class="admission-hero">
-                        <h3 class="hero-title">СІЗДІҢ БОЛАШАҒЫҢЫЗ - БІЗДІҢ БАСТЫ НАЗАРЫМЫЗДА!</h3>
-                        <p class="hero-subtitle">БІЗДІҢ КОЛЛЕДЖДЕ ОҚУ - САПАЛЫ БІЛІМ МЕН ЖАРҚЫН БОЛАШАҚҚА БАСТАР ЖОЛ</p>
-                    </div>
-                </div>
-
-                <div class="admission-stats">
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <span class="stat-number">500+</span>
-                        <span class="stat-text">СТУДЕНТ ҚАБЫЛДАЙМЫЗ</span>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <span class="stat-number">12</span>
-                        <span class="stat-text">МАМАНДЫҚ</span>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <span class="stat-number">95%</span>
-                        <span class="stat-text">ЖҰМЫСҚА ОРНАЛАСУ</span>
-                    </div>
-                </div>
-
-                <div class="admission-grid">
-                    <div class="admission-card requirements">
-                        <div class="card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-file-alt"></i>
-                            </div>
-                            <h3>ҚАЖЕТТІ ҚҰЖАТТАР</h3>
-                            <div class="title-underline"></div>
-                        </div>
-                        <div class="requirements-list">
-                            <div class="requirement-item">
-                                <div class="requirement-icon">
-                                    <i class="fas fa-id-card"></i>
-                                </div>
-                                <div class="requirement-content">
-                                    <h4>Жеке куәлік</h4>
-                                    <p>Көшірмесі (2 дана)</p>
-                                </div>
-                            </div>
-                            <div class="requirement-item">
-                                <div class="requirement-icon">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-                                <div class="requirement-content">
-                                    <h4>Аттестат</h4>
-                                    <p>Түпнұсқа және көшірме</p>
-                                </div>
-                            </div>
-                            <div class="requirement-item">
-                                <div class="requirement-icon">
-                                    <i class="fas fa-notes-medical"></i>
-                                </div>
-                                <div class="requirement-content">
-                                    <h4>086-У медициналық анықтама</h4>
-                                    <p>Флюорография қорытындысымен</p>
-                                </div>
-                            </div>
-                            <div class="requirement-item">
-                                <div class="requirement-icon">
-                                    <i class="fas fa-syringe"></i>
-                                </div>
-                                <div class="requirement-content">
-                                    <h4>063 егу паспорты</h4>
-                                    <p>Көшірмесі</p>
-                                </div>
-                            </div>
-                            <div class="requirement-item">
-                                <div class="requirement-icon">
-                                    <i class="fas fa-camera"></i>
-                                </div>
-                                <div class="requirement-content">
-                                    <h4>Фотосурет 3x4</h4>
-                                    <p>6 дана, түрлі-түсті</p>
-                                </div>
-                            </div>
-                            <div class="requirement-item">
-                                <div class="requirement-icon">
-                                    <i class="fas fa-file-signature"></i>
-                                </div>
-                                <div class="requirement-content">
-                                    <h4>Өтініш</h4>
-                                    <p>Орнында толтырылады</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="admission-card dates">
-                        <div class="card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-calendar-alt"></i>
-                            </div>
-                            <h3>МАҢЫЗДЫ МЕРЗІМДЕР</h3>
-                            <div class="title-underline"></div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-dot">
-                                    <i class="fas fa-file-import"></i>
-                                </div>
-                                <div class="timeline-content">
-                                    <div class="timeline-date">1 маусым - 25 тамыз</div>
-                                    <h4>Құжат қабылдау</h4>
-                                    <p>Құжаттарды қабылдау мерзімі</p>
-                                    <div class="timeline-status">
-                                        <span class="status-badge">Белсенді кезең</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot">
-                                    <i class="fas fa-tasks"></i>
-                                </div>
-                                <div class="timeline-content">
-                                    <div class="timeline-date">25-28 тамыз</div>
-                                    <h4>Емтихандар мен әңгімелесу</h4>
-                                    <p>Талапкерлерді бағалау кезеңі</p>
-                                    <div class="timeline-status">
-                                        <span class="status-badge upcoming">Алда</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot">
-                                    <i class="fas fa-list-check"></i>
-                                </div>
-                                <div class="timeline-content">
-                                    <div class="timeline-date">30 тамыз</div>
-                                    <h4>Нәтижелерді жариялау</h4>
-                                    <p>Қабылданған студенттер тізімі</p>
-                                    <div class="timeline-status">
-                                        <span class="status-badge upcoming">Алда</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot">
-                                    <i class="fas fa-school"></i>
-                                </div>
-                                <div class="timeline-content">
-                                    <div class="timeline-date">1 қыркүйек</div>
-                                    <h4>Оқу жылының басталуы</h4>
-                                    <p>Алғашқы қоңырау салтанаты</p>
-                                    <div class="timeline-status">
-                                        <span class="status-badge upcoming">Алда</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="admission-extra">
-                    <div class="extra-card hostel">
-                        <i class="fas fa-home"></i>
-                        <h4>Жатақхана</h4>
-                        <p>Барлық студенттерге жатақханадан орын беріледі</p>
-                    </div>
-                    <div class="extra-card scholarship">
-                        <i class="fas fa-money-bill-wave"></i>
-                        <h4>Шәкіртақы</h4>
-                        <p>Мемлекеттік грант иегерлеріне ай сайын</p>
-                    </div>
-                    <div class="extra-card practice">
-                        <i class="fas fa-briefcase"></i>
-                        <h4>Практика</h4>
-                        <p>Жетекші мектептер мен балабақшаларда</p>
-                    </div>
-                </div>
-
-                <div class="admission-cta">
-                    <h3>Қосымша ақпарат алғыңыз келе ме?</h3>
-                    <p>Қабылдау комиссиясына хабарласыңыз немесе онлайн өтініш қалдырыңыз</p>
-                    <div class="cta-buttons">
-                        <a href="tel:+77771234567" class="cta-button phone-button">
-                            <i class="fas fa-phone"></i> Бізге қоңырау шалыңыз
-                        </a>
-                        <a href="#contact" class="cta-button">
-                            <i class="fas fa-envelope"></i> Онлайн өтініш
-                        </a>
-                    </div>
-                </div>
-
-                <div class="admission-faq">
-                    <h3>Жиі қойылатын сұрақтар</h3>
-                    <div class="faq-grid">
-                        <div class="faq-item">
-                            <h4><i class="fas fa-question-circle"></i> Құжаттарды қашан тапсыруға болады?</h4>
-                            <p>Құжат қабылдау 1 маусымнан басталады. Құжаттарды күн сайын 9:00-ден 18:00-ге дейін тапсыруға болады.</p>
-                        </div>
-                        <div class="faq-item">
-                            <h4><i class="fas fa-question-circle"></i> Грант бөлінеді ме?</h4>
-                            <p>Иә, біздің колледжде мемлекеттік тапсырыс бойынша оқуға мүмкіндік бар. Гранттар саны мамандықтарға байланысты әртүрлі.</p>
-                        </div>
-                        <div class="faq-item">
-                            <h4><i class="fas fa-question-circle"></i> Жатақхана беріледі ме?</h4>
-                            <p>Иә, басқа қаладан келген студенттерге жатақханадан орын беріледі. Жатақхана жаңа әрі заманауи жабдықталған.</p>
-                        </div>
-                        <div class="faq-item">
-                            <h4><i class="fas fa-question-circle"></i> Оқу ақысын бөліп төлеуге бола ма?</h4>
-                            <p>Иә, оқу ақысын семестрге бөліп төлеуге болады. Сонымен қатар, әлеуметтік жеңілдіктер қарастырылған.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="news" class="section">
-            <div class="container">
-                <h2 class="section-title">
-                    <span class="title-icon"><i class="fas fa-newspaper"></i></span>
-                    Соңғы жаңалықтар
-                    <div class="title-underline"></div>
-                </h2>
-                <div class="news-grid">
-                    <div class="instagram-post">
-                        <a href="https://www.instagram.com/p/pedagogical_college_olympiad" target="_blank" class="post-link">
-                            <div class="post-header">
-                                <div class="post-author">
-                                    <div class="author-avatar">
-                                        <i class="fas fa-graduation-cap"></i>
-                                    </div>
-                                    <div class="author-info">
-                                        <h4>Педагогикалық колледж</h4>
-                                        <span>Нұр-Сұлтан, Қазақстан</span>
-                                    </div>
-                                </div>
-                                <div class="post-menu">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                </div>
-                            </div>
-                            <div class="post-image">
-                                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754" alt="Студенттер жетістігі">
-                            </div>
-                        </a>
-                        <div class="post-actions">
-                            <div class="action-buttons">
-                                <i class="far fa-heart"></i>
-                                <i class="far fa-comment"></i>
-                                <i class="far fa-paper-plane"></i>
-                            </div>
-                            <i class="far fa-bookmark"></i>
-                        </div>
-                        <div class="post-content">
-                            <div class="post-likes">
-                                <span>256 ұнады</span>
-                            </div>
-                            <div class="post-description">
-                                <strong>pedagogical_college</strong> Біздің студенттер республикалық олимпиадада жүлделі орындарға ие болды! 🏆
-                                <br><br>
-                                <a href="https://www.instagram.com/explore/tags/педагогикалықколледж" target="_blank">#педагогикалықколледж</a> 
-                                <a href="https://www.instagram.com/explore/tags/білімберу" target="_blank">#білімберу</a> 
-                                <a href="https://www.instagram.com/explore/tags/жетістік" target="_blank">#жетістік</a> 
-                                <a href="https://www.instagram.com/explore/tags/студенттер" target="_blank">#студенттер</a>
-                            </div>
-                            <div class="post-time">2 сағат бұрын</div>
-                        </div>
-                    </div>
-
-                    <div class="instagram-post">
-                        <a href="https://www.instagram.com/p/pedagogical_college_openday" target="_blank" class="post-link">
-                            <div class="post-header">
-                                <div class="post-author">
-                                    <div class="author-avatar">
-                                        <i class="fas fa-graduation-cap"></i>
-                                    </div>
-                                    <div class="author-info">
-                                        <h4>Педагогикалық колледж</h4>
-                                        <span>Нұр-Сұлтан, Қазақстан</span>
-                                    </div>
-                                </div>
-                                <div class="post-menu">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                </div>
-                            </div>
-                            <div class="post-image">
-                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7" alt="Мерекелік шара">
-                            </div>
-                        </a>
-                        <div class="post-actions">
-                            <div class="action-buttons">
-                                <i class="far fa-heart"></i>
-                                <i class="far fa-comment"></i>
-                                <i class="far fa-paper-plane"></i>
-                            </div>
-                            <i class="far fa-bookmark"></i>
-                        </div>
-                        <div class="post-content">
-                            <div class="post-likes">
-                                <span>328 ұнады</span>
-                            </div>
-                            <div class="post-description">
-                                <strong>pedagogical_college</strong> Бүгін колледжімізде "Ашық есік күні" өтті. Болашақ студенттермен кездесу өте қызықты болды! 🎓
-                                <br><br>
-                                <a href="https://www.instagram.com/explore/tags/ашықесіккүні" target="_blank">#ашықесіккүні</a> 
-                                <a href="https://www.instagram.com/explore/tags/талапкер2025" target="_blank">#талапкер2025</a> 
-                                <a href="https://www.instagram.com/explore/tags/білімберу" target="_blank">#білімберу</a> 
-                                <a href="https://www.instagram.com/explore/tags/педагогика" target="_blank">#педагогика</a>
-                            </div>
-                            <div class="post-time">1 күн бұрын</div>
-                        </div>
-                    </div>
-
-                    <div class="instagram-post">
-                        <a href="https://www.instagram.com/p/pedagogical_college_sport" target="_blank" class="post-link">
-                            <div class="post-header">
-                                <div class="post-author">
-                                    <div class="author-avatar">
-                                        <i class="fas fa-graduation-cap"></i>
-                                    </div>
-                                    <div class="author-info">
-                                        <h4>Педагогикалық колледж</h4>
-                                        <span>Нұр-Сұлтан, Қазақстан</span>
-                                    </div>
-                                </div>
-                                <div class="post-menu">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                </div>
-                            </div>
-                            <div class="post-image">
-                                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4" alt="Спорттық жарыс">
-                            </div>
-                        </a>
-                        <div class="post-actions">
-                            <div class="action-buttons">
-                                <i class="far fa-heart"></i>
-                                <i class="far fa-comment"></i>
-                                <i class="far fa-paper-plane"></i>
-                            </div>
-                            <i class="far fa-bookmark"></i>
-                        </div>
-                        <div class="post-content">
-                            <div class="post-likes">
-                                <span>425 ұнады</span>
-                            </div>
-                            <div class="post-description">
-                                <strong>pedagogical_college</strong> Дене шынықтыру мамандығының студенттері қалалық спорттық жарыста 1-орын алды! 🥇
-                                <br><br>
-                                <a href="https://www.instagram.com/explore/tags/спорт" target="_blank">#спорт</a> 
-                                <a href="https://www.instagram.com/explore/tags/жеңіс" target="_blank">#жеңіс</a> 
-                                <a href="https://www.instagram.com/explore/tags/студенттер" target="_blank">#студенттер</a> 
-                                <a href="https://www.instagram.com/explore/tags/денешынықтыру" target="_blank">#денешынықтыру</a>
-                            </div>
-                            <div class="post-time">3 күн бұрын</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="posts" class="section">
-            <div class="container">
-                <h2 class="section-title">
-                    <span class="title-icon"><i class="fas fa-camera"></i></span>
-                    Колледж өмірі
-                    <div class="title-underline"></div>
-                </h2>
-                <div class="posts-grid">
-                    <!-- Пост 1: Спорттық жеңіс -->
-                    <div class="instagram-style-post">
-                        <div class="post-header">
-                            <div class="post-author">
-                                <img src="https://i.imgur.com/8dQZXU8.jpg" alt="College Logo" class="author-avatar">
-                                <div class="author-info">
-                                    <h4>Педагогикалық колледж</h4>
-                                    <span>2 сағат бұрын</span>
-                                </div>
-                            </div>
-                            <button class="post-more">
-                                <i class="fas fa-ellipsis-h"></i>
-                            </button>
-                        </div>
-                        <div class="post-image">
-                            <img src="https://images.unsplash.com/photo-1526976668912-1a811878dd37" alt="Спорттық жеңіс">
-                        </div>
-                        <div class="post-actions">
-                            <div class="action-buttons">
-                                <button><i class="far fa-heart"></i></button>
-                                <button><i class="far fa-comment"></i></button>
-                                <button><i class="far fa-paper-plane"></i></button>
-                            </div>
-                            <button><i class="far fa-bookmark"></i></button>
-                        </div>
-                        <div class="post-likes">
-                            <span>256 ұнатты</span>
-                        </div>
-                        <div class="post-caption">
-                            <p><strong>pedagogical_college</strong> Біздің волейбол командасы қалалық турнирде 1-орын алды! 🏆 Құттықтаймыз! 👏</p>
-                            <div class="post-tags">
-                                <a href="#">#спорт</a>
-                                <a href="#">#жеңіс</a>
-                                <a href="#">#волейбол</a>
-                            </div>
-                        </div>
-                        <div class="post-comments">
-                            <div class="comment">
-                                <p><strong>student2024</strong> Керемет! Құттықтаймыз! 🎉</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Пост 2: Мәдени шара -->
-                    <div class="instagram-style-post">
-                        <div class="post-header">
-                            <div class="post-author">
-                                <img src="https://i.imgur.com/8dQZXU8.jpg" alt="College Logo" class="author-avatar">
-                                <div class="author-info">
-                                    <h4>Педагогикалық колледж</h4>
-                                    <span>5 сағат бұрын</span>
-                                </div>
-                            </div>
-                            <button class="post-more">
-                                <i class="fas fa-ellipsis-h"></i>
-                            </button>
-                        </div>
-                        <div class="post-image">
-                            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3" alt="Мәдени шара">
-                        </div>
-                        <div class="post-actions">
-                            <div class="action-buttons">
-                                <button><i class="far fa-heart"></i></button>
-                                <button><i class="far fa-comment"></i></button>
-                                <button><i class="far fa-paper-plane"></i></button>
-                            </div>
-                            <button><i class="far fa-bookmark"></i></button>
-                        </div>
-                        <div class="post-likes">
-                            <span>328 ұнатты</span>
-                        </div>
-                        <div class="post-caption">
-                            <p><strong>pedagogical_college</strong> Бүгін колледжімізде "Наурыз мейрамы" атты мерекелік шара өтті! 🎊 Студенттеріміз өздерінің өнерлерін көрсетті.</p>
-                            <div class="post-tags">
-                                <a href="#">#наурыз</a>
-                                <a href="#">#мереке</a>
-                                <a href="#">#дәстүр</a>
-                            </div>
-                        </div>
-                        <div class="post-comments">
-                            <div class="comment">
-                                <p><strong>aigerim2024</strong> Өте әдемі шара болды! 💫</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Пост 3: Оқу жетістігі -->
-                    <div class="instagram-style-post">
-                        <div class="post-header">
-                            <div class="post-author">
-                                <img src="https://i.imgur.com/8dQZXU8.jpg" alt="College Logo" class="author-avatar">
-                                <div class="author-info">
-                                    <h4>Педагогикалық колледж</h4>
-                                    <span>1 күн бұрын</span>
-                                </div>
-                            </div>
-                            <button class="post-more">
-                                <i class="fas fa-ellipsis-h"></i>
-                            </button>
-                        </div>
-                        <div class="post-image">
-                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" alt="Оқу жетістігі">
-                        </div>
-                        <div class="post-actions">
-                            <div class="action-buttons">
-                                <button><i class="far fa-heart"></i></button>
-                                <button><i class="far fa-comment"></i></button>
-                                <button><i class="far fa-paper-plane"></i></button>
-                            </div>
-                            <button><i class="far fa-bookmark"></i></button>
-                        </div>
-                        <div class="post-likes">
-                            <span>425 ұнатты</span>
-                        </div>
-                        <div class="post-caption">
-                            <p><strong>pedagogical_college</strong> Құттықтаймыз! 🎓 Біздің студенттер республикалық пәндік олимпиадада жүлделі орындарға ие болды!</p>
-                            <div class="post-tags">
-                                <a href="#">#олимпиада</a>
-                                <a href="#">#жетістік</a>
-                                <a href="#">#білім</a>
-                            </div>
-                        </div>
-                        <div class="post-comments">
-                            <div class="comment">
-                                <p><strong>teacher_anna</strong> Жарайсыңдар! Мақтан тұтамыз! 👏</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-title">
-                    <span class="title-icon">
-                        <i class="fas fa-envelope"></i>
-                    </span>
-                    Байланыс
-                    <div class="title-underline"></div>
-                </h2>
                 
-                <div class="contact-wrapper">
-                    <div class="contact-info-card">
-                        <div class="contact-info-header">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <h3>Бізді табыңыз</h3>
-                        </div>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-location-dot"></i>
-                                <div class="item-content">
-                                    <h4>Мекенжай</h4>
-                                    <p>Қазақстан, Нұр-Сұлтан қ., Илияс Жансурова к, 4</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <div class="item-content">
-                                    <h4>Телефон</h4>
-                                    <p><a href="tel:+77171123456">+7 (717) 112-34-56</a></p>
-                                    <p><a href="tel:+77171123457">+7 (717) 112-34-57</a></p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <div class="item-content">
-                                    <h4>Email</h4>
-                                    <p><a href="mailto:info@pedagogical-college.kz">info@pedagogical-college.kz</a></p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-clock"></i>
-                                <div class="item-content">
-                                    <h4>Жұмыс уақыты</h4>
-                                    <p>Дүйсенбі - Жұма: 9:00 - 18:00</p>
-                                    <p>Сенбі: 9:00 - 14:00</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="social-links-contact">
-                            <h4>Әлеуметтік желілер</h4>
-                            <div class="social-icons">
-                                <a href="https://instagram.com/pedagogical_college" target="_blank" class="social-icon instagram" title="Instagram">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram">
-                                </a>
-                                <a href="https://t.me/pedagogical_college" target="_blank" class="social-icon telegram" title="Telegram">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png" alt="Telegram">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Заманауи аудиториядағы студенттер">
+                    <div class="floating-element floating-1"></div>
+                    <div class="floating-element floating-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="contact-form-card">
-                        <div class="form-header">
-                            <i class="fas fa-paper-plane"></i>
-                            <h3>Бізге жазыңыз</h3>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Біздің колледж туралы</h2>
+                <p>Біз әлемді жақсы жаққа өзгертетін болашақ педагогтарды дайындаймыз. Біздің колледж - бұл дәстүрлер мен инновациялардың кездесетін орны.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Біздің миссиямыз</h3>
+                    <p>Біз заманауи жағдайларда жұмыс істей алатын және инновациялық педагогикалық технологияларды қолдана алатын білім беру саласының жоғары білікті мамандарын дайындаймыз.</p>
+                    <p>Біздің колледж сапалы білім беру дәстүрлері мен болашақ педагогтарды оқытудың инновациялық тәсілдерімен танымал аймақтың жетекші оқу орны болып табылады.</p>
+                    
+                    <div class="achievements-box">
+                        <h4>Біздің жетістіктеріміз:</h4>
+                        <ul>
+                            <li>Түлектердің 98% жұмысқа орналасуы</li>
+                            <li>Білім беру қызметін жүргізуге лицензия</li>
+                            <li>Бағдарламалардың мемлекеттік аккредитациясы</li>
+                            <li>Аймақтық білім беру байқауларының жеңімпаздары</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Компьютерде жұмыс істеп отырған студентка">
+                    <div class="about-badge">
+                        <div class="badge-icon">🏆</div>
+                        <div class="badge-text">
+                            <div class="badge-number">25 жыл</div>
+                            <div class="badge-label">тәжірибе</div>
                         </div>
-                        <form id="contactForm" class="modern-form">
-                            <div class="form-group">
-                                <input type="text" id="name" required>
-                                <label for="name">Аты-жөніңіз</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" id="email" required>
-                                <label for="email">Email</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" id="phone" required>
-                                <label for="phone">Телефон</label>
-                            </div>
-                            <div class="form-group">
-                                <select id="subject" required>
-                                    <option value="" disabled selected>Тақырыпты таңдаңыз</option>
-                                    <option value="admission">Оқуға түсу</option>
-                                    <option value="consultation">Кеңес алу</option>
-                                    <option value="cooperation">Ынтымақтастық</option>
-                                    <option value="other">Басқа</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <textarea id="message" required></textarea>
-                                <label for="message">Хабарлама</label>
-                            </div>
-                            <button type="submit" class="submit-button">
-                                <span>Жіберу</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </form>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-    <footer>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h4>Білім сапасы</h4>
+                    <p>Жоғары оқыту стандарттары және заманауи дәрістерді оқыту әдістемелері</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💝</div>
+                    <h4>Жеке көзқарас</h4>
+                    <p>Әрбір студентке және оның қажеттіліктеріне жеке назар</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h4>Практикалық бағыт</h4>
+                    <p>Практикалық дағдылар мен нақты жұмыс тәжірибесіне баса назар</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h4>Инновациялар</h4>
+                    <p>Білім беру процесінде заманауи технологияларды қолдану</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="leadership">
+        <div class="container">
+            <div class="section-header">
+                <h2>Колледж басшылығы</h2>
+                <p>Өз өмірін білім беруді дамытуға арнаған тәжірибелі басшылар мен педагогтардың біздің командасы</p>
+            </div>
+            
+            <div class="leadership-grid">
+                <!-- Director -->
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Елена Викторовна Петрова">
+                    </div>
+                    <div class="leader-info">
+                        <h3>Елена Викторовна Петрова</h3>
+                        <p class="leader-position">Колледж директоры</p>
+                        <div class="leader-details">
+                            <p><strong>Білімі:</strong> Педагогика ғылымдарының кандидаты</p>
+                            <p><strong>Тәжірибе:</strong> Білім беруде 15 жыл</p>
+                        </div>
+                        <div class="leader-achievements">
+                            <h4>Жетістіктері:</h4>
+                            <ul>
+                                <li>ҚР Білім беру құрметті қызметкері</li>
+                                <li>"Жылдың үздік директоры" сыйлығының лауреаты</li>
+                                <li>20+ ғылыми жарияланымның авторы</li>
+                            </ul>
+                        </div>
+                        <div class="leader-contacts">
+                            <p>📧 director@pedcollege.kz</p>
+                            <p>📞 +7 (123) 456-78-90</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Deputy for Academic Work -->
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Михаил Александрович Соколов">
+                    </div>
+                    <div class="leader-info">
+                        <h3>Михаил Александрович Соколов</h3>
+                        <p class="leader-position">Оқу жұмысы жөніндегі директордың орынбасары</p>
+                        <div class="leader-details">
+                            <p><strong>Білімі:</strong> Педагогика ғылымдарының магистрі</p>
+                            <p><strong>Тәжірибе:</strong> Білім беруде 12 жыл</p>
+                        </div>
+                        <div class="leader-achievements">
+                            <h4>Жетістіктері:</h4>
+                            <ul>
+                                <li>Білім беру бағдарламалары жөніндегі сарапшы</li>
+                                <li>Инновациялық әдістемелердің әзірлеушісі</li>
+                                <li>Халықаралық жобалардың координаторы</li>
+                            </ul>
+                        </div>
+                        <div class="leader-contacts">
+                            <p>📧 zavuch.study@pedcollege.kz</p>
+                            <p>📞 +7 (123) 456-78-91</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Deputy for Educational Work -->
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Анна Сергеевна Морозова">
+                    </div>
+                    <div class="leader-info">
+                        <h3>Анна Сергеевна Морозова</h3>
+                        <p class="leader-position">Тәрбие жұмысы жөніндегі директордың орынбасары</p>
+                        <div class="leader-details">
+                            <p><strong>Білімі:</strong> Психология магистрі</p>
+                            <p><strong>Тәжірибе:</strong> Білім беруде 10 жыл</p>
+                        </div>
+                        <div class="leader-achievements">
+                            <h4>Жетістіктері:</h4>
+                            <ul>
+                                <li>Жастар саясаты маманы</li>
+                                <li>Студенттік бағдарламалардың ұйымдастырушысы</li>
+                                <li>Психолог-кеңесші</li>
+                            </ul>
+                        </div>
+                        <div class="leader-contacts">
+                            <p>📧 zavuch.education@pedcollege.kz</p>
+                            <p>📞 +7 (123) 456-78-92</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Deputy Cards -->
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Асылхан Ерболұлы Жұмабеков">
+                    </div>
+                    <div class="leader-info">
+                        <h3>Асылхан Ерболұлы Жұмабеков</h3>
+                        <p class="leader-position">Ғылыми жұмыс жөніндегі директордың орынбасары</p>
+                        <div class="leader-details">
+                            <p><strong>Білімі:</strong> Филология ғылымдарының кандидаты</p>
+                            <p><strong>Тәжірибе:</strong> Ғылым саласында 8 жыл</p>
+                        </div>
+                        <div class="leader-achievements">
+                            <h4>Жетістіктері:</h4>
+                            <ul>
+                                <li>Қазақ филологиясы саласының маманы</li>
+                                <li>15+ ғылыми мақала авторы</li>
+                                <li>Халықаралық конференциялардың қатысушысы</li>
+                            </ul>
+                        </div>
+                        <div class="leader-contacts">
+                            <p>📧 science@pedcollege.kz</p>
+                            <p>📞 +7 (123) 456-78-93</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Гүлнәр Сәбитқызы Өтемісова">
+                    </div>
+                    <div class="leader-info">
+                        <h3>Гүлнәр Сәбитқызы Өтемісова</h3>
+                        <p class="leader-position">Практика жөніндегі директордың орынбасары</p>
+                        <div class="leader-details">
+                            <p><strong>Білімі:</strong> Дошкольное образование магистрі</p>
+                            <p><strong>Тәжірибе:</strong> Білім беруде 14 жыл</p>
+                        </div>
+                        <div class="leader-achievements">
+                            <h4>Жетістіктері:</h4>
+                            <ul>
+                                <li>Мектепке дейінгі тәрбие саласының маманы</li>
+                                <li>Студенттердің практикасын ұйымдастырушы</li>
+                                <li>Балабақшалармен серіктестік дамытушы</li>
+                            </ul>
+                        </div>
+                        <div class="leader-contacts">
+                            <p>📧 practice@pedcollege.kz</p>
+                            <p>📞 +7 (123) 456-78-94</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Данияр Маратұлы Сейітов">
+                    </div>
+                    <div class="leader-info">
+                        <h3>Данияр Маратұлы Сейітов</h3>
+                        <p class="leader-position">Спорт және денсаулық жөніндегі орынбасар</p>
+                        <div class="leader-details">
+                            <p><strong>Білімі:</strong> Дене шынықтыру магистрі</p>
+                            <p><strong>Тәжірибе:</strong> Спорт саласында 11 жыл</p>
+                        </div>
+                        <div class="leader-achievements">
+                            <h4>Жетістіктері:</h4>
+                            <ul>
+                                <li>Дене шынықтыру саласының маманы</li>
+                                <li>Спорт клубтарының дамытушысы</li>
+                                <li>Студенттердің денсаулығын қадағалаушы</li>
+                            </ul>
+                        </div>
+                        <div class="leader-contacts">
+                            <p>📧 sport@pedcollege.kz</p>
+                            <p>📞 +7 (123) 456-78-95</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Колледждің мамандықтары</h2>
+                <p>Білім беру саласында сұранысқа ие маман болуға көмектесетін оқу бағытын таңдаңыз</p>
+            </div>
+            
+            <div class="programs-grid">
+                <!-- Physical Education -->
+                <div class="program-card popular">
+                    <div class="program-header">
+                        <div class="popular-badge">Танымал</div>
+                        <h3>Дене шынықтыру</h3>
+                        <p>Дене шынықтыру мұғалімі</p>
+                    </div>
+                    <div class="program-content">
+                        <p>Дене тәрбиесі мұғалімдерін дайындау</p>
+                        
+                        <div class="program-groups">
+                            <div class="group-section">
+                                <h4>Қазақ тілінде оқыту:</h4>
+                                <div class="group-info">
+                                    <div class="group-type grant">
+                                        <span class="group-icon">🎓</span>
+                                        <div>
+                                            <div class="group-title">Грант</div>
+                                            <div class="group-places">15 орын</div>
+                                        </div>
+                                    </div>
+                                    <div class="group-type paid">
+                                        <span class="group-icon">💰</span>
+                                        <div>
+                                            <div class="group-title">Ақылы</div>
+                                            <div class="group-places">20 орын</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="group-section">
+                                <h4>Орыс тілінде оқыту:</h4>
+                                <div class="group-info">
+                                    <div class="group-type grant">
+                                        <span class="group-icon">🎓</span>
+                                        <div>
+                                            <div class="group-title">Грант</div>
+                                            <div class="group-places">10 орын</div>
+                                        </div>
+                                    </div>
+                                    <div class="group-type paid">
+                                        <span class="group-icon">💰</span>
+                                        <div>
+                                            <div class="group-title">Ақылы</div>
+                                            <div class="group-places">15 орын</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program-details">
+                            <div class="detail">
+                                <span class="detail-icon">⏰</span>
+                                <div>
+                                    <div class="detail-title">Ұзақтығы</div>
+                                    <div class="detail-value">3 жыл</div>
+                                </div>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-icon">📚</span>
+                                <div>
+                                    <div class="detail-title">Оқу түрі</div>
+                                    <div class="detail-value">Күндізгі</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program-subjects">
+                            <h4>Негізгі пәндер:</h4>
+                            <div class="subjects-tags">
+                                <span class="subject-tag">Спорт теориясы</span>
+                                <span class="subject-tag">Анатомия</span>
+                                <span class="subject-tag">Дәрістерді оқыту әдістемесі</span>
+                                <span class="subject-tag">Спорттық ойындар</span>
+                            </div>
+                        </div>
+                        <div class="program-buttons">
+                            <button class="btn btn-primary">Өтініш беру</button>
+                            <button class="btn btn-outline">Толығырақ</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kazakh Language -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3>Қазақ тілі мен әдебиеті</h3>
+                        <p>Қазақ тілі мен әдебиеті мұғалімі</p>
+                    </div>
+                    <div class="program-content">
+                        <p>Қазақ тілі мен әдебиеті мұғалімдерін дайындау</p>
+                        
+                        <div class="program-groups">
+                            <div class="group-section">
+                                <h4>Қазақ тілінде оқыту:</h4>
+                                <div class="group-info">
+                                    <div class="group-type grant">
+                                        <span class="group-icon">🎓</span>
+                                        <div>
+                                            <div class="group-title">Грант</div>
+                                            <div class="group-places">25 орын</div>
+                                        </div>
+                                    </div>
+                                    <div class="group-type paid">
+                                        <span class="group-icon">💰</span>
+                                        <div>
+                                            <div class="group-title">Ақылы</div>
+                                            <div class="group-places">30 орын</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program-details">
+                            <div class="detail">
+                                <span class="detail-icon">⏰</span>
+                                <div>
+                                    <div class="detail-title">Ұзақтығы</div>
+                                    <div class="detail-value">3 жыл </div>
+                                </div>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-icon">📚</span>
+                                <div>
+                                    <div class="detail-title">Оқу түрі</div>
+                                    <div class="detail-value">Күндізгі</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program-subjects">
+                            <h4>Негізгі пәндер:</h4>
+                            <div class="subjects-tags">
+                                <span class="subject-tag">Қазақ тілі</span>
+                                <span class="subject-tag">Қазақ әдебиеті</span>
+                                <span class="subject-tag">Тіл білімі</span>
+                                <span class="subject-tag">Әдебиеттану</span>
+                                <span class="subject-tag">Дәрістерді оқыту әдістемесі</span>
+                            </div>
+                        </div>
+                        <div class="program-buttons">
+                            <button class="btn btn-primary">Өтініш беру</button>
+                            <button class="btn btn-outline">Толығырақ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Russian Language -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3>Орыс тілі мен әдебиеті</h3>
+                        <p>Орыс тілі мен әдебиеті мұғалімі</p>
+                    </div>
+                    <div class="program-content">
+                        <p>Орыс тілі мен әдебиеті мұғалімдерін дайындау</p>
+                        
+                        <div class="program-groups">
+                            <div class="group-section">
+                                <h4>Орыс тілінде оқыту:</h4>
+                                <div class="group-info">
+                                    <div class="group-type grant">
+                                        <span class="group-icon">🎓</span>
+                                        <div>
+                                            <div class="group-title">Грант</div>
+                                            <div class="group-places">20 орын</div>
+                                        </div>
+                                    </div>
+                                    <div class="group-type paid">
+                                        <span class="group-icon">💰</span>
+                                        <div>
+                                            <div class="group-title">Ақылы</div>
+                                            <div class="group-places">25 орын</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program-details">
+                            <div class="detail">
+                                <span class="detail-icon">⏰</span>
+                                <div>
+                                    <div class="detail-title">Ұзақтығы</div>
+                                    <div class="detail-value">3 жыл </div>
+                                </div>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-icon">📚</span>
+                                <div>
+                                    <div class="detail-title">Оқу түрі</div>
+                                    <div class="detail-value">Күндізгі</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program-subjects">
+                            <h4>Негізгі пәндер:</h4>
+                            <div class="subjects-tags">
+                                <span class="subject-tag">Орыс тілі</span>
+                                <span class="subject-tag">Орыс әдебиеті</span>
+                                <span class="subject-tag">Тіл білімі</span>
+                                <span class="subject-tag">Әдебиеттану</span>
+                                <span class="subject-tag">Дәрістерді оқыту әдістемесі</span>
+                            </div>
+                        </div>
+                        <div class="program-buttons">
+                            <button class="btn btn-primary">Өтініш беру</button>
+                            <button class="btn btn-outline">Толығырақ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preschool Education Russian -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3>Мектепке дейінгі тәрбие (орыс тобы)</h3>
+                        <p>Мектепке дейінгі жастағы балалардың тәрбиешісі</p>
+                    </div>
+                    <div class="program-content">
+                        <p>Мектепке дейінгі жастағы балалармен жұмыс істеу әдістемелерін үйрету</p>
+                        
+                        <div class="program-groups">
+                            <div class="group-section">
+                                <h4>Орыс тілінде оқыту:</h4>
+                                <div class="group-info">
+                                    <div class="group-type grant">
+                                        <span class="group-icon">🎓</span>
+                                        <div>
+                                            <div class="group-title">Грант</div>
+                                            <div class="group-places">18 орын</div>
+                                        </div>
+                                    </div>
+                                    <div class="group-type paid">
+                                        <span class="group-icon">💰</span>
+                                        <div>
+                                            <div class="group-title">Ақылы</div>
+                                            <div class="group-places">22 орын</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program-details">
+                            <div class="detail">
+                                <span class="detail-icon">⏰</span>
+                                <div>
+                                    <div class="detail-title">Ұзақтығы</div>
+                                    <div class="detail-value">3 жыл </div>
+                                </div>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-icon">📚</span>
+                                <div>
+                                    <div class="detail-title">Оқу түрі</div>
+                                    <div class="detail-value">Күндізгі</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program-subjects">
+                            <h4>Негізгі пәндер:</h4>
+                            <div class="subjects-tags">
+                                <span class="subject-tag">Мектепке дейінгі педагогика</span>
+                                <span class="subject-tag">Балалар психологиясы</span>
+                                <span class="subject-tag">Дамыту әдістемелері</span>
+                                <span class="subject-tag">Ойын қызметі</span>
+                            </div>
+                        </div>
+                        <div class="program-buttons">
+                            <button class="btn btn-primary">Өтініш беру</button>
+                            <button class="btn btn-outline">Толығырақ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preschool Education Kazakh -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3>Мектепке дейінгі тәрбие (қазақ тобы)</h3>
+                        <p>Мектепке дейінгі жастағы балалардың тәрбиешісі</p>
+                    </div>
+                    <div class="program-content">
+                        <p>Мектепке дейінгі жастағы балалармен жұмыс істеу әдістемелерін үйрету</p>
+                        
+                        <div class="program-groups">
+                            <div class="group-section">
+                                <h4>Қазақ тілінде оқыту:</h4>
+                                <div class="group-info">
+                                    <div class="group-type grant">
+                                        <span class="group-icon">🎓</span>
+                                        <div>
+                                            <div class="group-title">Грант</div>
+                                            <div class="group-places">20 орын</div>
+                                        </div>
+                                    </div>
+                                    <div class="group-type paid">
+                                        <span class="group-icon">💰</span>
+                                        <div>
+                                            <div class="group-title">Ақылы</div>
+                                            <div class="group-places">25 орын</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program-details">
+                            <div class="detail">
+                                <span class="detail-icon">⏰</span>
+                                <div>
+                                    <div class="detail-title">Ұзақтығы</div>
+                                    <div class="detail-value">3 жыл </div>
+                                </div>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-icon">📚</span>
+                                <div>
+                                    <div class="detail-title">Оқу түрі</div>
+                                    <div class="detail-value">Күндізгі</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program-subjects">
+                            <h4>Негізгі пәндер:</h4>
+                            <div class="subjects-tags">
+                                <span class="subject-tag">Мектепке дейінгі педагогика</span>
+                                <span class="subject-tag">Балалар психологиясы</span>
+                                <span class="subject-tag">Дамыту әдістемелері</span>
+                                <span class="subject-tag">Ойын қызметі</span>
+                            </div>
+                        </div>
+                        <div class="program-buttons">
+                            <button class="btn btn-primary">Өтініш беру</button>
+                            <button class="btn btn-outline">Толығырақ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Life Section -->
+    <section id="student-life" class="student-life">
+        <div class="container">
+            <div class="section-header">
+                <h2>Студенттік өмір</h2>
+                <p>Біздің жаңалықтарымыз бен колледждегі оқиғаларымызды қадағалаңыз. Бізде күн сайын қызықты нәрсе болады!</p>
+            </div>
+            
+            <div class="student-life-content">
+                <div class="posts-grid">
+                    <div class="post-card">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Дәрістерді оқыту әдістемесі жөніндегі сабақ">
+                            <div class="post-date">2 күн бұрын</div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-location">📍 205 аудитория</div>
+                            <p class="post-caption">Бастауыш мектепте дәрістерді оқыту әдістемесі жөніндегі қызықты сабақ! Біздің студенттер балаларды оқытудың заманауи тәсілдерін үйреніп жатыр 📚✨</p>
+                            <div class="post-actions">
+                                <div class="post-stats">
+                                    <span class="stat">❤️ 127</span>
+                                    <span class="stat">💬 23</span>
+                                </div>
+                                <button class="share-btn">📤</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-card">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ақпараттық технологиялар жөніндегі сабақ">
+                            <div class="post-date">3 күн бұрын</div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-location">📍 Компьютерлік сынып</div>
+                            <p class="post-caption">Білім берудегі ақпараттық технологиялар жөніндегі практикалық сабақ. Болашақ мұғалімдер заманауи сабақ үшін цифрлық құралдарды игеріп жатыр 💻🎓</p>
+                            <div class="post-actions">
+                                <div class="post-stats">
+                                    <span class="stat">❤️ 89</span>
+                                    <span class="stat">💬 15</span>
+                                </div>
+                                <button class="share-btn">📤</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-card">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ашық есік күні">
+                            <div class="post-date">5 күн бұрын</div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-location">📍 Мәжіліс залы</div>
+                            <p class="post-caption">Ашық есік күні керемет өтті! Болашақ абитуриенттер біздің бағдарламалармен және оқытушыларымызбен танысты 🏫👥</p>
+                            <div class="post-actions">
+                                <div class="post-stats">
+                                    <span class="stat">❤️ 156</span>
+                                    <span class="stat">💬 34</span>
+                                </div>
+                                <button class="share-btn">📤</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-card">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ғылыми конференция">
+                            <div class="post-date">1 апта бұрын</div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-location">📍 Конференц-зал</div>
+                            <p class="post-caption">Студенттік ғылыми конференция "Білім берудегі инновациялар". Біздің студенттер өздерінің зерттеу жобаларын ұсынады 🔬📊</p>
+                            <div class="post-actions">
+                                <div class="post-stats">
+                                    <span class="stat">❤️ 94</span>
+                                    <span class="stat">💬 18</span>
+                                </div>
+                                <button class="share-btn">📤</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="events-card">
+                        <h3>📅 Келуші оқиғалар</h3>
+                        <div class="event">
+                            <div class="event-date">15 маусым</div>
+                            <div class="event-info">
+                                <h4>Мансап күні</h4>
+                                <p>10:00 - Жұмыс берушілер мен түлектермен кездесу</p>
+                            </div>
+                        </div>
+                        <div class="event">
+                            <div class="event-date">22 маусым</div>
+                            <div class="event-info">
+                                <h4>Студенттік байқау</h4>
+                                <p>14:00 - Педагогикалық идеялар байқауы</p>
+                            </div>
+                        </div>
+                        <div class="event">
+                            <div class="event-date">30 маусым</div>
+                            <div class="event-info">
+                                <h4>Түлек кеші</h4>
+                                <p>18:00 - Дипломдарды салтанатты табыстау</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-card">
+                        <h3>👥 Статистика</h3>
+                        <div class="stat-item">
+                            <span>Белсенді студенттер</span>
+                            <strong>1,200</strong>
+                        </div>
+                        <div class="stat-item">
+                            <span>Айдағы шаралар</span>
+                            <strong>15+</strong>
+                        </div>
+                        <div class="stat-item">
+                            <span>Студенттік клубтар</span>
+                            <strong>8</strong>
+                        </div>
+                        <div class="stat-item">
+                            <span>Спорт секциялары</span>
+                            <strong>5</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-card">
+                        <h3>Бізге қосылыңыз!</h3>
+                        <p>Біздің достық студенттік қауымдастықтың бөлігі болыңыз</p>
+                        <button class="btn btn-primary">Өтініш беру</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-info">
-                    <p>&copy; 2025 Педагогикалық колледж</p>
-                    <p>Барлық құқықтар қорғалған</p>
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="logo-icon">🎓</div>
+                        <div class="logo-text">
+                            <h3>Педагогикалық колледж</h3>
+                            <p>Болашақтың білімі</p>
+                        </div>
+                    </div>
+                    <p>Біз заманауи жағдайларда жұмыс істей алатын және инновациялық педагогикалық технологияларды қолдана алатын білім беру саласының жоғары білікті мамандарын дайындаймыз.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Telegram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <div class="social-links">
-                    <a href="https://instagram.com/pedagogical_college" target="_blank" class="social-link instagram" title="Instagram">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram">
-                        <span>Instagram</span>
-                    </a>
-                    <a href="https://t.me/pedagogical_college" target="_blank" class="social-link telegram" title="Telegram">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png" alt="Telegram">
-                        <span>Telegram</span>
-                    </a>
+                
+                <div class="footer-links">
+                    <h4>Жылдам сілтемелер</h4>
+                    <ul>
+                        <li><a href="#about">Колледж туралы</a></li>
+                        <li><a href="#programs">Мамандықтар</a></li>
+                        <li><a href="#leadership">Басшылық</a></li>
+                        <li><a href="#student-life">Студенттік өмір</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Байланыс</h4>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span>+7 (123) 456-78-90</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>info@pedcollege.kz</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>Алматы қ., Білім көшесі, 15 үй</span>
+                    </div>
+                    
+                    <div class="working-hours">
+                        <h5>Жұмыс уақыты</h5>
+                        <p>Дс-Жм: 8:00 - 18:00</p>
+                        <p>Сб: 9:00 - 15:00</p>
+                        <p>Жс: демалыс</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Педагогикалық колледж. Барлық құқықтар қорғалған.</p>
+                <div class="footer-legal">
+                    <a href="#">Құпиялылық саясаты</a>
+                    <a href="#">Пайдалану шарттары</a>
                 </div>
             </div>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
