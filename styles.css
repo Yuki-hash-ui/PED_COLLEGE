@@ -2737,3 +2737,321 @@ html {
         display: none;
     }
 }
+
+/* Device-specific Media Queries */
+
+/* Extra Small Devices (Phones) */
+@media only screen and (max-width: 575.98px) {
+    :root {
+        --container-padding: 16px;
+        --section-spacing: 40px;
+        --heading-scale: 0.8;
+    }
+
+    .container {
+        padding: 0 var(--container-padding);
+    }
+
+    /* Phone-specific typography */
+    body {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    h1 { font-size: calc(24px * var(--heading-scale)); }
+    h2 { font-size: calc(20px * var(--heading-scale)); }
+    h3 { font-size: calc(18px * var(--heading-scale)); }
+
+    /* Optimize for small screens */
+    .header-top {
+        display: none;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        padding: 40px 20px;
+    }
+
+    .achievement-card,
+    .faculty-card,
+    .specialty-item {
+        margin-bottom: 20px;
+    }
+
+    /* Single column layouts */
+    .about-grid,
+    .faculty-grid,
+    .achievements-grid,
+    .specialty-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Small Devices (Large Phones, Small Tablets) */
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+    :root {
+        --container-padding: 24px;
+        --section-spacing: 50px;
+        --heading-scale: 0.9;
+    }
+
+    .container {
+        padding: 0 var(--container-padding);
+    }
+
+    /* Larger phone typography */
+    body {
+        font-size: 15px;
+        line-height: 1.45;
+    }
+
+    /* Two column grids for larger phones */
+    .about-grid,
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+/* Medium Devices (Tablets) */
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+    :root {
+        --container-padding: 32px;
+        --section-spacing: 60px;
+        --heading-scale: 1;
+    }
+
+    /* Tablet typography */
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* Tablet-specific grids */
+    .about-grid,
+    .faculty-grid,
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .specialty-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large Devices (Laptops) */
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+    :root {
+        --container-padding: 40px;
+        --section-spacing: 70px;
+        --heading-scale: 1.1;
+    }
+
+    /* Laptop typography */
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* Multi-column grids */
+    .about-grid,
+    .achievements-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .faculty-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+/* Extra Large Devices (Desktops) */
+@media only screen and (min-width: 1200px) {
+    :root {
+        --container-padding: 48px;
+        --section-spacing: 80px;
+        --heading-scale: 1.2;
+    }
+
+    /* Desktop typography */
+    body {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    /* Full desktop grids */
+    .about-grid,
+    .achievements-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+    }
+
+    .faculty-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    .specialty-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Optimize for touch */
+    button,
+    .nav-link,
+    .cta-button,
+    .social-link {
+        min-height: 44px;
+        padding: 12px 20px;
+    }
+
+    /* Remove hover effects */
+    a:hover,
+    button:hover,
+    .nav-link:hover,
+    .cta-button:hover {
+        opacity: 1;
+    }
+
+    /* Add active states */
+    a:active,
+    button:active,
+    .nav-link:active,
+    .cta-button:active {
+        opacity: 0.7;
+        transition: opacity 0.1s ease;
+    }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Optimize images */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+
+    /* Sharper borders */
+    .card,
+    .button,
+    .input {
+        border-width: 0.5px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-color: #ffffff;
+        --card-bg: #1e1e1e;
+        --border-color: #333333;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+
+    .card,
+    .nav-list,
+    .header-main {
+        background-color: var(--card-bg);
+        border-color: var(--border-color);
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+}
+
+/* Landscape Mode */
+@media screen and (orientation: landscape) and (max-height: 576px) {
+    .hero-section {
+        min-height: auto;
+        padding: 40px 0;
+    }
+
+    .nav-list.active {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}
+
+/* CSS Grid Fallbacks */
+@supports not (display: grid) {
+    .about-grid,
+    .faculty-grid,
+    .achievements-grid,
+    .specialty-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .grid-item {
+        flex: 0 0 calc(33.333% - 20px);
+        margin: 10px;
+    }
+}
+
+/* Container Max-Width */
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container { max-width: 540px; }
+}
+
+@media (min-width: 768px) {
+    .container { max-width: 720px; }
+}
+
+@media (min-width: 992px) {
+    .container { max-width: 960px; }
+}
+
+@media (min-width: 1200px) {
+    .container { max-width: 1140px; }
+}
+
+@media (min-width: 1400px) {
+    .container { max-width: 1320px; }
+}
