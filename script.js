@@ -1,30 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Мобильді мәзірді басқару
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navList = document.querySelector('.nav-list');
     
-    menuToggle.addEventListener('click', function() {
-        navList.classList.toggle('active');
-        // Мәзір иконкасын өзгерту
-        const icon = this.querySelector('i');
-        if (navList.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+    if (mobileMenuToggle && navList) {
+        mobileMenuToggle.addEventListener('click', function() {
+            navList.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.nav-list') && !event.target.closest('.mobile-menu-toggle')) {
+            if (navList.classList.contains('active')) {
+                navList.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            }
         }
     });
 
-    // Мәзір сілтемелеріне click әрекетін қосу
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navList.classList.contains('active')) {
-                navList.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                // Close mobile menu if open
+                if (navList.classList.contains('active')) {
+                    navList.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                }
+                
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         });
     });
@@ -34,37 +45,111 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            // Форма жіберілгенде анимация көрсету
-            const submitButton = this.querySelector('.submit-button');
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Жіберілуде...';
             
-            // Имитация отправки формы
-            setTimeout(() => {
-                submitButton.innerHTML = '<i class="fas fa-check"></i> Жіберілді!';
-                this.reset();
-                setTimeout(() => {
-                    submitButton.innerHTML = '<span>Жіберу</span><i class="fas fa-arrow-right"></i>';
-                }, 2000);
-            }, 1500);
+            // Basic form validation
+            const formData = new FormData(this);
+            let isValid = true;
+            let firstInvalidField = null;
+
+            this.querySelectorAll('input, select, textarea').forEach(field => {
+                if (field.required && !field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('invalid');
+                    if (!firstInvalidField) firstInvalidField = field;
+                } else {
+                    field.classList.remove('invalid');
+                }
+            });
+
+            if (!isValid) {
+                firstInvalidField.focus();
+                return;
+            }
+
+            // Show success message
+            alert('Хабарлама сәтті жіберілді!');
+            this.reset();
         });
     }
 
-    // Анимацияларды қосу
-    const fadeElements = document.querySelectorAll('.section');
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
-            }
+    // Lazy loading for images
+    if ('loading' in HTMLImageElement.prototype) {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach(img => {
+            img.src = img.dataset.src;
         });
-    }, observerOptions);
+    } else {
+        // Fallback for browsers that don't support lazy loading
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+        document.body.appendChild(script);
+    }
 
-    fadeElements.forEach(element => {
-        observer.observe(element);
+    // Handle mobile device orientation changes
+    window.addEventListener('orientationchange', function() {
+        // Wait for orientation change to complete
+        setTimeout(function() {
+            // Adjust any necessary layouts
+            window.scrollTo(0, 0);
+        }, 200);
     });
+
+    // Add touch feedback
+    document.querySelectorAll('button, .nav-link, .cta-button').forEach(element => {
+        element.addEventListener('touchstart', function() {
+            this.style.opacity = '0.7';
+        });
+        
+        element.addEventListener('touchend', function() {
+            this.style.opacity = '1';
+        });
+    });
+
+    // Optimize mobile performance
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        document.body.classList.add('resize-animation-stopper');
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            document.body.classList.remove('resize-animation-stopper');
+        }, 400);
+    });
+});
+
+// Add to homescreen prompt for PWA
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    // Show your custom "Add to Home Screen" button or banner
+});
+
+// Service Worker Registration for offline functionality
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            console.log('ServiceWorker registration successful');
+        }, function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+}
+
+// Анимацияларды қосу
+const fadeElements = document.querySelectorAll('.section');
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+fadeElements.forEach(element => {
+    observer.observe(element);
 }); 

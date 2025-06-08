@@ -2521,3 +2521,219 @@ footer::before {
 * {
     -webkit-tap-highlight-color: transparent;
 }
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    /* Improved touch targets */
+    .nav-link,
+    .cta-button,
+    .social-link,
+    .form-group input,
+    .form-group select,
+    .submit-button {
+        min-height: 44px;
+        padding: 12px 16px;
+        margin-bottom: 10px;
+    }
+
+    /* Better spacing for mobile */
+    .section {
+        padding: 40px 16px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    /* Improved text readability */
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    h1 { font-size: 24px; }
+    h2 { font-size: 22px; }
+    h3 { font-size: 20px; }
+    h4 { font-size: 18px; }
+
+    /* Optimize forms for mobile */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px; /* Prevent iOS zoom on focus */
+        width: 100%;
+    }
+
+    /* Improve mobile navigation */
+    .nav-list {
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-item {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Optimize cards for mobile */
+    .faculty-card,
+    .program-card,
+    .achievement-card {
+        margin-bottom: 20px;
+        padding: 16px;
+    }
+
+    /* Better mobile grid */
+    .about-grid,
+    .faculty-grid,
+    .programs-grid,
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Optimize contact section */
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .contact-info-card,
+    .contact-form-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Improve mobile tables */
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Better mobile images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Optimize mobile buttons */
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Improve mobile header */
+    .header-main {
+        padding: 10px 0;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Better mobile menu */
+    .mobile-menu-toggle {
+        display: block;
+        padding: 12px;
+        margin-right: -12px;
+    }
+
+    /* Optimize social links */
+    .social-links {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* Touch-friendly footer */
+    footer {
+        padding: 40px 16px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* Fast tap highlights for mobile */
+    * {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+
+    a:active,
+    button:active {
+        background-color: rgba(0,0,0,0.1);
+    }
+
+    /* Optimize mobile forms */
+    input[type="submit"],
+    button {
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    /* Better mobile scrolling */
+    .timeline,
+    .requirements-list,
+    .news-grid {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+    }
+
+    /* Optimize mobile hero section */
+    #hero {
+        height: auto;
+        min-height: 60vh;
+        padding: 60px 16px;
+    }
+
+    .hero-content {
+        text-align: center;
+        padding: 0;
+    }
+
+    /* Better mobile achievements */
+    .achievements-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .stat-item {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Add smooth scrolling for all devices */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optimize for high DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* Print styles */
+@media print {
+    .mobile-menu-toggle,
+    .social-links,
+    .cta-buttons {
+        display: none;
+    }
+}
